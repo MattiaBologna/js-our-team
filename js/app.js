@@ -30,7 +30,7 @@ const ourTeam = [
     createMember('Barbara Ramos', 'Graphic Designer', 'barbara-ramos-graphic-designer.jpg')
 ]
 
-console.log(ourTeam);
+// console.log(ourTeam);
 
 
 // ? MILESTONE 1:
@@ -43,7 +43,7 @@ const containerDOMElement = document.getElementById('container')
 // Ciclare l'array e per ogni membro stampare le informazioni 
 for (let i = 0; i < ourTeam.length; i++) {
     const currentMember = ourTeam[i]
-    console.log(`Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`);
+    // console.log(`Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`);
 
     // sostituire il path dell'immagine con l'immagine effettiva 
     const memberImage = document.createElement('img');
@@ -64,6 +64,7 @@ for (let i = 0; i < ourTeam.length; i++) {
             </div>
         </div>`
 
+    // aggiungere alla card le classi di bootstrap per lo stile
     memberCard.classList.add('col-4', 'gy-5', 'd-flex', 'justify-content-center')
 
     // aggiungere al container nel DOM le informazioni e l'immagine di ciascun membro 
@@ -72,6 +73,35 @@ for (let i = 0; i < ourTeam.length; i++) {
     // aggiungere al container nel DOM le card
     containerDOMElement.append(memberCard)
 }
+
+// ! BONUS 3
+// Aggiungi un membro con un click 
+
+// recuperare il pulsante aggiungi membro e aggiungere un event listener
+const createMemberButtonDOMElement = document.getElementById('createMember')
+createMemberButtonDOMElement.addEventListener('click', function() {
+
+    // chiedere all'utente nome e titolo del nuovo membro
+    const newMemberName = prompt('Inserisci il nome del membro')
+    const newMemberTitle = prompt('inserisci il titolo del membro')
+
+    // creare la carta del nuovo membro 
+    const memberCard = document.createElement('div');
+    memberCard.innerHTML = `
+        <div class="card" style="width: 18rem;">
+            <img src='./img/new-member.jpg' class="card-img-top">
+            <div class="card-body text-center">
+                <h5 class="card-title">${newMemberName}</h5>
+                <p class="card-text">${newMemberTitle}</p>
+            </div>
+        </div>`
+
+    // aggiungere alla card le classi di bootstrap per lo stile
+    memberCard.classList.add('col-4', 'gy-5', 'd-flex', 'justify-content-center')
+
+    // aggiungere al container nel DOM le card
+    containerDOMElement.append(memberCard)
+})
 
 
 // ? MILESTONE 2:

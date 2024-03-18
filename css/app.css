@@ -32,3 +32,18 @@ body {
     padding: 0px 300px;
 }
 
+#createMember {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    color: white;
+    background-color: rgba(57, 57, 179, 0.966);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#createMember:hover {
+    background-color: hsla(240, 52%, 56%, 0.966);
+}
