@@ -49,12 +49,28 @@ for (let i = 0; i < ourTeam.length; i++) {
     const memberImage = document.createElement('img');
     memberImage.src = `./img/${currentMember.img}`;
 
-    // creare gli elementi nel dom che contendono le informazioni dei membri 
+    // creare gli elementi nel dom che contengono le informazioni dei membri 
     const stringContainer = document.createElement('p');
     stringContainer.innerHTML = `Nome: ${currentMember.name}, titolo: ${currentMember.title}`;
 
+    // creare le card con bootstrap 
+    const memberCard = document.createElement('div');
+    memberCard.innerHTML = `
+        <div class="card" style="width: 18rem;">
+            <img src='${currentMember.img}' class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${currentMember.name}</h5>
+                <p class="card-text">${currentMember.title}</p>
+            </div>
+        </div>`
+
+    memberCard.classList.add('col-4')
+
     // aggiungere al container nel DOM le informazioni e l'immagine di ciascun membro 
-    containerDOMElement.append(stringContainer, memberImage)
+    // containerDOMElement.append(memberImage, stringContainer)
+
+    // aggiungere al container nel DOM le card
+    containerDOMElement.append(memberCard)
 }
 
 
