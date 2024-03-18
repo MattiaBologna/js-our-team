@@ -34,6 +34,13 @@ console.log(ourTeam);
 
 // ? MILESTONE 1:
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
+// Ciclare l'array e per ogni membro stampare le informazioni 
+for (let i = 0; i < ourTeam.length; i++) {
+    const currentMember = ourTeam[i]
+    console.log(`Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`);
+}
+
 // ? MILESTONE 2:
 // Stampare le stesse informazioni su DOM semplicemente come stringhe
 // ! BONUS 1:
