@@ -36,10 +36,19 @@ console.log(ourTeam);
 // ? MILESTONE 1:
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
+// recuperare il container
+const containerDOMElement = document.getElementById('container')
+console.log(containerDOMElement);
+
 // Ciclare l'array e per ogni membro stampare le informazioni 
 for (let i = 0; i < ourTeam.length; i++) {
     const currentMember = ourTeam[i]
     console.log(`Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`);
+
+    // creare gli elementi nel DOM e stampare le informazioni dei membri 
+    const stringContainer = document.createElement('p');
+    stringContainer.innerHTML = `Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`;
+    containerDOMElement.append(stringContainer)
 }
 
 
@@ -48,18 +57,17 @@ for (let i = 0; i < ourTeam.length; i++) {
 
 // creare degli elementi nel DOM dove inserire le informazioni come stringhe 
 // recuperare il container
-const containerDOMElement = document.getElementById('container')
-console.log(containerDOMElement);
+// const containerDOMElement = document.getElementById('container')
+// console.log(containerDOMElement);
 
-// TODO trasferire nel ciclo for sopra (stesse iterazioni)
 // per ogni membro creare un elemento nel container e mostrarlo a schermo 
 
-for (let i = 0; i < ourTeam.length; i++) {
-    const currentMember = ourTeam[i];
-    const stringContainer = document.createElement('p');
-    stringContainer.innerHTML = `Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`;
-    containerDOMElement.append(stringContainer)
-}
+// for (let i = 0; i < ourTeam.length; i++) {
+//     const currentMember = ourTeam[i];
+//     const stringContainer = document.createElement('p');
+//     stringContainer.innerHTML = `Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`;
+//     containerDOMElement.append(stringContainer)
+// }
 
 // ! BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
