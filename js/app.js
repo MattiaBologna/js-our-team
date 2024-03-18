@@ -57,14 +57,14 @@ for (let i = 0; i < ourTeam.length; i++) {
     const memberCard = document.createElement('div');
     memberCard.innerHTML = `
         <div class="card" style="width: 18rem;">
-            <img src='${currentMember.img}' class="card-img-top">
-            <div class="card-body">
+            <img src='./img/${currentMember.img}' class="card-img-top">
+            <div class="card-body text-center">
                 <h5 class="card-title">${currentMember.name}</h5>
                 <p class="card-text">${currentMember.title}</p>
             </div>
         </div>`
 
-    memberCard.classList.add('col-4')
+    memberCard.classList.add('col-4', 'gy-5', 'd-flex', 'justify-content-center')
 
     // aggiungere al container nel DOM le informazioni e l'immagine di ciascun membro 
     // containerDOMElement.append(memberImage, stringContainer)
