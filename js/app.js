@@ -45,10 +45,16 @@ for (let i = 0; i < ourTeam.length; i++) {
     const currentMember = ourTeam[i]
     console.log(`Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`);
 
-    // creare gli elementi nel DOM e stampare le informazioni dei membri 
+    // sostituire il path dell'immagine con l'immagine effettiva 
+    const memberImage = document.createElement('img');
+    memberImage.src = `./img/${currentMember.img}`;
+
+    // creare gli elementi nel dom che contendono le informazioni dei membri 
     const stringContainer = document.createElement('p');
-    stringContainer.innerHTML = `Nome: ${currentMember.name}, titolo: ${currentMember.title}, image path: ${currentMember.img}`;
-    containerDOMElement.append(stringContainer)
+    stringContainer.innerHTML = `Nome: ${currentMember.name}, titolo: ${currentMember.title}`;
+
+    // aggiungere al container nel DOM le informazioni e l'immagine di ciascun membro 
+    containerDOMElement.append(stringContainer, memberImage)
 }
 
 
@@ -73,16 +79,15 @@ for (let i = 0; i < ourTeam.length; i++) {
 // ! BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
 
-// TODO sposta nel ciclo for di prima (stesse iterazioni)
 // stampare a schermo le varie immagini a schermo 
 
-for (let i = 0; i < ourTeam.length; i++) {
-    const currentMember = ourTeam[i];
-    // crea un oggetto immagine 
-    const memberImage = document.createElement('img');
-    memberImage.src = `./img/${currentMember.img}`;
-    containerDOMElement.append(memberImage)
-}
+// for (let i = 0; i < ourTeam.length; i++) {
+//     const currentMember = ourTeam[i];
+//     // crea un oggetto immagine 
+//     const memberImage = document.createElement('img');
+//     memberImage.src = `./img/${currentMember.img}`;
+//     containerDOMElement.append(memberImage)
+// }
 
 
 // ! BONUS 2:
