@@ -38,7 +38,7 @@ console.log(ourTeam);
 
 // recuperare il container
 const containerDOMElement = document.getElementById('container')
-console.log(containerDOMElement);
+// console.log(containerDOMElement);
 
 // Ciclare l'array e per ogni membro stampare le informazioni 
 for (let i = 0; i < ourTeam.length; i++) {
@@ -69,7 +69,21 @@ for (let i = 0; i < ourTeam.length; i++) {
 //     containerDOMElement.append(stringContainer)
 // }
 
+
 // ! BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
+
+// TODO sposta nel ciclo for di prima (stesse iterazioni)
+// stampare a schermo le varie immagini a schermo 
+
+for (let i = 0; i < ourTeam.length; i++) {
+    const currentMember = ourTeam[i];
+    // crea un oggetto immagine 
+    const memberImage = document.createElement('img');
+    memberImage.src = `./img/${currentMember.img}`;
+    containerDOMElement.append(memberImage)
+}
+
+
 // ! BONUS 2:
 // Organizzare i singoli membri in card/schede
